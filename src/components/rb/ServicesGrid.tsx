@@ -1,222 +1,206 @@
 "use client";
 
-import { motion } from "framer-motion";
+import React from "react";
 
 const services = [
   {
-    title: "Criação de Sites",
-    description: "Criamos sites institucionais, comerciais, landing pages, portais, portfólios, páginas pessoais, projetos para eventos e experiências digitais.",
+    id: 1,
+    title: "CRIAÇÃO DE SITES",
+    description: "Sites institucionais, comerciais, landing pages, portais, portfólios e páginas personalizadas.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-        <rect width="20" height="14" x="2" y="3" rx="2" />
-        <line x1="8" x2="16" y1="21" y2="21" />
-        <line x1="12" x2="12" y1="17" y2="21" />
+      <svg className="w-6 h-6 text-[#0B3D91]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <rect x="2" y="3" width="20" height="14" rx="2" strokeWidth="2" />
+        <path d="M8 21h8M12 17v4" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
-    message: "Olá, gostaria de saber mais sobre a Criação de Sites."
   },
   {
-    title: "Marketing Digital",
+    id: 2,
+    title: "MARKETING DIGITAL",
     description: "Estratégia de posicionamento, divulgação, presença digital e campanhas.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-        <circle cx="12" cy="12" r="10" />
-        <circle cx="12" cy="12" r="6" />
-        <circle cx="12" cy="12" r="2" />
+      <svg className="w-6 h-6 text-[#0B3D91]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3" strokeWidth="2" />
+        <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
-    message: "Olá, gostaria de saber mais sobre Marketing Digital."
   },
   {
-    title: "Engajamento para Redes Sociais",
-    description: "Estratégias de conteúdo, planejamento e ações para fortalecer a presença digital.",
+    id: 3,
+    title: "ENGAJAMENTO PARA REDES SOCIAIS",
+    description: "Estratégias de conteúdo, planejamento e ações para fortalecer sua presença digital.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      <svg className="w-6 h-6 text-[#0B3D91]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" strokeWidth="2" />
+        <circle cx="9" cy="7" r="4" strokeWidth="2" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" strokeWidth="2" />
       </svg>
     ),
-    message: "Olá, gostaria de saber mais sobre Engajamento para Redes Sociais."
   },
   {
-    title: "Produção de Vídeos",
-    description: "Vídeos institucionais, promocionais, reels, apresentações e vídeos com conceito cinematográfico.",
+    id: 4,
+    title: "PRODUÇÃO DE VÍDEOS",
+    description: "Vídeos institucionais, promocionais, reels e apresentações com conceito cinematográfico.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-        <polygon points="23 7 16 12 23 17 23 7" />
-        <rect width="15" height="14" x="1" y="5" rx="2" ry="2" />
+      <svg className="w-6 h-6 text-[#0B3D91]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <rect x="2" y="4" width="20" height="16" rx="2" strokeWidth="2" />
+        <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" />
       </svg>
     ),
-    message: "Olá, gostaria de saber mais sobre Produção de Vídeos."
   },
   {
-    title: "Design e Cartazes",
-    description: "Cartazes, banners, flyers, apresentações e materiais digitais.",
+    id: 5,
+    title: "DESIGN E CARTAZES",
+    description: "Cartazes, banners, flyers, apresentações e materiais digitais profissionais.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-        <circle cx="13.5" cy="6.5" r=".5" />
-        <circle cx="17.5" cy="10.5" r=".5" />
-        <circle cx="8.5" cy="7.5" r=".5" />
-        <circle cx="6.5" cy="12.5" r=".5" />
-        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+      <svg className="w-6 h-6 text-[#0B3D91]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M12 19l7-7 3 3-7 7-3-3z" strokeWidth="2" />
+        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" strokeWidth="2" />
+        <path d="M2 2l7.586 7.586" strokeWidth="2" />
+        <circle cx="11" cy="11" r="2" strokeWidth="2" />
       </svg>
     ),
-    message: "Olá, gostaria de saber mais sobre Design e Cartazes."
   },
   {
-    title: "Chatbots para WhatsApp",
-    description: "Atendimento automatizado, captação de contatos, respostas automáticas e organização de atendimento.",
+    id: 6,
+    title: "CHATBOTS PARA WHATSAPP",
+    description: "Atendimento automatizado, captação de contatos e organização de atendimento.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      <svg className="w-6 h-6 text-[#0B3D91]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" strokeWidth="2" />
       </svg>
     ),
-    message: "Olá, gostaria de saber mais sobre Chatbots para WhatsApp."
   },
   {
-    title: "Integrações",
-    description: "Conectamos ferramentas, formulários, sistemas, APIs, páginas, automações e canais digitais.",
+    id: 7,
+    title: "INTEGRAÇÕES",
+    description: "Conectamos ferramentas, sistemas, APIs, formulários e canais digitais.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+      <svg className="w-6 h-6 text-[#0B3D91]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" strokeWidth="2" strokeLinecap="round" />
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
-    message: "Olá, gostaria de saber mais sobre Integrações."
   },
   {
-    title: "Blogs e Sites Pessoais",
+    id: 8,
+    title: "BLOGS E SITES PESSOAIS",
     description: "Blogs profissionais, portfólios, páginas pessoais e presença digital.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+      <svg className="w-6 h-6 text-[#0B3D91]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" strokeWidth="2" />
+        <line x1="2" y1="12" x2="22" y2="12" strokeWidth="2" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" strokeWidth="2" />
       </svg>
     ),
-    message: "Olá, gostaria de saber mais sobre Blogs e Sites Pessoais."
   },
   {
-    title: "Planilhas Inteligentes",
-    description: "Planilhas de gestão, indicadores, dashboards, controles financeiros e relatórios.",
+    id: 9,
+    title: "PLANILHAS INTELIGENTES",
+    description: "Planilhas de gestão, indicadores, dashboards, controles e relatórios.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-        <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
-        <line x1="3" x2="21" y1="9" y2="9" />
-        <line x1="3" x2="21" y1="15" y2="15" />
-        <line x1="9" x2="9" y1="3" y2="21" />
-        <line x1="15" x2="15" y1="3" y2="21" />
+      <svg className="w-6 h-6 text-[#0B3D91]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" strokeWidth="2" />
+        <polyline points="14 2 14 8 20 8" strokeWidth="2" />
+        <line x1="8" y1="13" x2="16" y2="13" strokeWidth="2" />
+        <line x1="8" y1="17" x2="16" y2="17" strokeWidth="2" />
+        <line x1="10" y1="9" x2="10" y2="9" strokeWidth="2" />
       </svg>
     ),
-    message: "Olá, gostaria de saber mais sobre Planilhas Inteligentes."
   },
   {
-    title: "Orçamentos para Eventos",
-    description: "Sistemas e planilhas para controle de custos, fornecedores, convidados e orçamento de eventos.",
+    id: 10,
+    title: "ORÇAMENTOS PARA EVENTOS",
+    description: "Sistemas e planilhas para controle de custos, fornecedores e convidados.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-        <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-        <line x1="16" x2="16" y1="2" y2="6" />
-        <line x1="8" x2="8" y1="2" y2="6" />
-        <line x1="3" x2="21" y1="10" y2="10" />
+      <svg className="w-6 h-6 text-[#0B3D91]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" strokeWidth="2" />
+        <line x1="16" y1="2" x2="16" y2="6" strokeWidth="2" />
+        <line x1="8" y1="2" x2="8" y2="6" strokeWidth="2" />
+        <line x1="3" y1="10" x2="21" y2="10" strokeWidth="2" />
       </svg>
     ),
-    message: "Olá, gostaria de saber mais sobre Orçamentos para Eventos."
   },
   {
-    title: "PowerPoint Profissional",
+    id: 11,
+    title: "POWERPOINT PROFISSIONAL",
     description: "Apresentações comerciais, empresariais, acadêmicas e institucionais.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-        <path d="M2 3h20" />
-        <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
-        <path d="m7 21 5-5 5 5" />
+      <svg className="w-6 h-6 text-[#0B3D91]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M2 3h20v14H2z" strokeWidth="2" />
+        <path d="M8 21h8M12 17v4" strokeWidth="2" />
+        <path d="M7 8h4a2 2 0 0 1 0 4H7z" strokeWidth="2" />
+        <path d="M7 8v6" strokeWidth="2" />
       </svg>
     ),
-    message: "Olá, gostaria de saber mais sobre PowerPoint Profissional."
   },
   {
-    title: "Soluções Digitais Personalizadas",
-    description: "Projetos criados de acordo com a necessidade específica de cada cliente.",
+    id: 12,
+    title: "SOLUÇÕES DIGITAIS PERSONALIZADAS",
+    description: "Projetos criados de acordo com a necessidade específica de cada negócio.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      <svg className="w-6 h-6 text-[#0B3D91]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3" strokeWidth="2" />
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" strokeWidth="2" />
       </svg>
     ),
-    message: "Olá, gostaria de saber mais sobre Soluções Digitais Personalizadas."
-  }
+  },
 ];
 
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-};
-
 export default function ServicesGrid() {
-  const whatsappNumber = "5538991621135";
-
   return (
-    <section id="solucoes" className="section-padding bg-[#05070B] relative">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="font-heading text-4xl md:text-5xl font-bold text-gradient-premium mb-6"
-          >
-            Tecnologia para transformar ideias em realidade.
-          </motion.h2>
+    <section id="solucoes" className="bg-[#F8FAFC] py-20 lg:py-28 border-t border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-2">
+          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#0B3D91]">
+            TECNOLOGIA PARA TRANSFORMAR IDEIAS EM REALIDADE
+          </span>
+          <h2 className="font-heading text-3xl sm:text-4xl font-black text-[#071A3A] tracking-tight">
+            O QUE FAZEMOS
+          </h2>
         </div>
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-        >
-          {services.map((service, index) => (
-            <motion.div 
-              key={index} 
-              variants={itemVariants}
-              className="glass-card p-6 flex flex-col h-full rounded-2xl group hover:border-[#C9A227]/40 hover:shadow-[0_0_20px_rgba(201,162,39,0.15)] transition-all duration-300 transform hover:-translate-y-1"
+        {/* 12 Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+          {services.map((item) => (
+            <div
+              key={item.id}
+              className="bg-white border border-slate-200 rounded-xl p-6 flex flex-col justify-between hover:border-slate-300 hover:shadow-md transition-all duration-300 group"
             >
-              <div className="mb-4 text-[#C9A227] opacity-90 group-hover:opacity-100 transition-opacity">
-                {service.icon}
+              <div>
+                {/* Icon box */}
+                <div className="w-12 h-12 rounded-lg bg-blue-50/80 border border-blue-100 flex items-center justify-center mb-5 group-hover:bg-blue-100/70 transition-colors">
+                  {item.icon}
+                </div>
+
+                {/* Title */}
+                <h3 className="font-heading font-extrabold text-xs text-[#071A3A] tracking-wider uppercase mb-2 leading-snug">
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 font-heading">{service.title}</h3>
-              <p className="text-[#C8CDD5] text-sm flex-grow mb-6 leading-relaxed">
-                {service.description}
-              </p>
-              
-              <a 
-                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(service.message)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-auto inline-flex items-center text-sm font-semibold text-[#0B3D91] hover:text-[#C9A227] transition-colors"
-                aria-label={`Entrar em contato sobre ${service.title}`}
-              >
-                Conhecer solução
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </a>
-            </motion.div>
+
+              {/* Action Link */}
+              <div className="pt-5 mt-4 border-t border-slate-100">
+                <a
+                  href={`https://wa.me/5538991621135?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20de%20${encodeURIComponent(item.title)}.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-[10px] font-extrabold uppercase tracking-wider text-[#B8860B] hover:text-[#996F08] transition-colors"
+                >
+                  CONHECER SOLUÇÃO <span className="ml-1 text-sm font-bold">→</span>
+                </a>
+              </div>
+            </div>
           ))}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );

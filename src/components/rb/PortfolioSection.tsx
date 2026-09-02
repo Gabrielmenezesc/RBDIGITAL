@@ -1,123 +1,107 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Link from "next/link";
+import React, { useState } from "react";
 
 const projects = [
   {
-    id: 1,
-    title: "Casamento Digital",
-    description:
-      "Uma experiencia digital criada para transformar um casamento em uma plataforma completa de informacoes, interacao e apresentacao.",
+    id: "casamento",
+    title: "CASAMENTO DIGITAL",
+    description: "Uma experiência digital criada para transformar um casamento em uma plataforma completa de informações, interação e apresentação.",
+    buttonText: "VER PROJETO",
+    buttonType: "navy",
     link: "https://gabrielmenezesc.github.io/casamento-anny-e-gabriel/",
-    isReal: true,
-    badge: "",
-    preview: (
-      <div className="h-full w-full bg-gradient-to-br from-rose-100 to-amber-100 dark:from-rose-900/30 dark:to-amber-900/30 p-4 flex flex-col items-center justify-center space-y-4">
-        <div className="w-16 h-16 rounded-full border-2 border-rose-300 dark:border-rose-700/50 flex items-center justify-center">
-          <div className="w-12 h-12 rounded-full border border-amber-300 dark:border-amber-700/50" />
+    mockup: (
+      <div className="w-full h-44 bg-gradient-to-tr from-[#3b1d28] via-[#6d3049] to-[#d4af37] p-4 flex flex-col justify-between text-white relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+        <div className="flex justify-between items-center text-[10px] tracking-widest uppercase opacity-80">
+          <span>Anny & Gabriel</span>
+          <span>15.11.2025</span>
         </div>
-        <div className="w-24 h-4 bg-rose-200 dark:bg-rose-800/50 rounded-full" />
-        <div className="w-32 h-3 bg-rose-100 dark:bg-rose-900/30 rounded-full" />
-        <div className="flex gap-2 w-full max-w-[80%] mt-4">
-          <div className="flex-1 h-20 bg-white/50 dark:bg-black/20 rounded-md" />
-          <div className="flex-1 h-20 bg-white/50 dark:bg-black/20 rounded-md" />
+        <div className="text-center my-auto">
+          <div className="font-serif italic text-2xl font-bold tracking-wide">Anny & Gabriel</div>
+          <div className="text-[9px] uppercase tracking-widest mt-1 opacity-90">Contagem regressiva para o grande dia</div>
         </div>
-      </div>
-    ),
-  },
-  {
-    id: 2,
-    title: "Portal Institucional Municipal",
-    description:
-      "Demonstracao conceitual de um portal digital para administracao publica municipal.",
-    link: "#",
-    isReal: false,
-    badge: "DEMONSTRACAO CONCEITUAL",
-    preview: (
-      <div className="h-full w-full bg-slate-100 dark:bg-slate-900 flex flex-col">
-        <div className="h-8 bg-blue-600 dark:bg-blue-800 flex items-center px-4 gap-2">
-          <div className="w-6 h-6 bg-white/30 rounded-full" />
-          <div className="w-16 h-2 bg-white/50 rounded-full" />
-          <div className="ml-auto flex gap-1">
-            <div className="w-8 h-2 bg-white/30 rounded-full" />
-            <div className="w-8 h-2 bg-white/30 rounded-full" />
-          </div>
-        </div>
-        <div className="flex-1 p-4 grid grid-cols-3 gap-3">
-          <div className="col-span-2 space-y-3">
-            <div className="h-24 bg-white dark:bg-slate-800 rounded-md p-2 flex flex-col justify-end">
-              <div className="w-1/2 h-3 bg-slate-200 dark:bg-slate-700 rounded-full" />
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <div className="h-16 bg-white dark:bg-slate-800 rounded-md" />
-              <div className="h-16 bg-white dark:bg-slate-800 rounded-md" />
-            </div>
-          </div>
-          <div className="space-y-2">
-            <div className="h-10 bg-blue-100 dark:bg-blue-900/30 rounded-md" />
-            <div className="h-10 bg-blue-100 dark:bg-blue-900/30 rounded-md" />
-            <div className="h-10 bg-blue-100 dark:bg-blue-900/30 rounded-md" />
-          </div>
+        <div className="flex justify-center gap-2">
+          <div className="bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded text-[9px]">Confirmar Presença</div>
+          <div className="bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded text-[9px]">Lista de Presentes</div>
         </div>
       </div>
     ),
   },
   {
-    id: 3,
-    title: "Empresa Local",
-    description:
-      "Demonstracao de site empresarial para negocios locais.",
+    id: "municipal",
+    title: "PORTAL INSTITUCIONAL MUNICIPAL",
+    description: "Demonstração conceitual de portal para prefeituras e instituições.",
+    buttonText: "VER DEMONSTRAÇÃO",
+    buttonType: "gold",
     link: "#",
-    isReal: false,
-    badge: "DEMONSTRACAO",
-    preview: (
-      <div className="h-full w-full bg-gray-50 dark:bg-gray-900 flex flex-col">
-        <div className="h-6 flex items-center px-4 justify-between border-b border-gray-200 dark:border-gray-800">
-          <div className="w-12 h-2 bg-gray-300 dark:bg-gray-700 rounded-full" />
-          <div className="flex gap-2">
-            <div className="w-4 h-1 bg-gray-300 dark:bg-gray-700 rounded-full" />
-            <div className="w-4 h-1 bg-gray-300 dark:bg-gray-700 rounded-full" />
-            <div className="w-4 h-1 bg-gray-300 dark:bg-gray-700 rounded-full" />
-          </div>
+    mockup: (
+      <div className="w-full h-44 bg-gradient-to-tr from-[#0F284E] via-[#1E4E8C] to-[#3B82F6] p-4 flex flex-col justify-between text-white relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+        <div className="flex items-center gap-2 border-b border-white/10 pb-2">
+          <div className="w-4 h-4 rounded bg-white/20 flex items-center justify-center text-[8px] font-bold">BR</div>
+          <span className="text-[10px] font-bold tracking-wider uppercase">Prefeitura Municipal</span>
         </div>
-        <div className="h-20 bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-          <div className="w-32 h-4 bg-gray-300 dark:bg-gray-700 rounded-full" />
+        <div className="my-auto space-y-1">
+          <div className="text-xs font-bold text-white">Transparência & Serviços Públicos</div>
+          <div className="text-[9px] text-blue-100">Acesso rápido aos principais canais da cidade</div>
         </div>
-        <div className="flex-1 p-3 grid grid-cols-2 gap-2">
-          <div className="h-12 bg-white dark:bg-gray-800 rounded shadow-sm" />
-          <div className="h-12 bg-white dark:bg-gray-800 rounded shadow-sm" />
-          <div className="h-12 bg-white dark:bg-gray-800 rounded shadow-sm" />
-          <div className="h-12 bg-white dark:bg-gray-800 rounded shadow-sm" />
+        <div className="grid grid-cols-4 gap-1 text-[8px] text-center">
+          <span className="bg-white/15 py-1 rounded">Serviços</span>
+          <span className="bg-white/15 py-1 rounded">Notícias</span>
+          <span className="bg-white/15 py-1 rounded">Ouvidoria</span>
+          <span className="bg-white/15 py-1 rounded">Diário</span>
         </div>
       </div>
     ),
   },
   {
-    id: 4,
-    title: "Portfolio Profissional",
-    description:
-      "Demonstracao de um site pessoal e portfolio digital.",
+    id: "empresa",
+    title: "EMPRESA LOCAL",
+    description: "Site demonstrativo para empresas locais com apresentação de serviços, produtos e contato.",
+    buttonText: "VER DEMONSTRAÇÃO",
+    buttonType: "gold",
     link: "#",
-    isReal: false,
-    badge: "DEMONSTRACAO",
-    preview: (
-      <div className="h-full w-full bg-zinc-100 dark:bg-zinc-950 flex flex-col p-4">
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-12 h-12 rounded-full bg-zinc-300 dark:bg-zinc-800 flex-shrink-0" />
-          <div className="space-y-2 flex-1">
-            <div className="w-24 h-3 bg-zinc-300 dark:bg-zinc-800 rounded-full" />
-            <div className="w-full h-2 bg-zinc-200 dark:bg-zinc-800/50 rounded-full" />
-            <div className="w-3/4 h-2 bg-zinc-200 dark:bg-zinc-800/50 rounded-full" />
+    mockup: (
+      <div className="w-full h-44 bg-gradient-to-tr from-[#111827] via-[#1F2937] to-[#374151] p-4 flex flex-col justify-between text-white relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+        <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider text-slate-300">
+          <span>Soluções Industriais</span>
+          <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+        </div>
+        <div className="my-auto">
+          <div className="text-xs font-extrabold text-white">Engenharia & Tecnologia</div>
+          <div className="text-[9px] text-slate-300 mt-0.5">Soluções completas para seu negócio</div>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="bg-[#B8860B] text-white text-[8px] font-bold px-2 py-1 rounded">Fazer Orçamento</div>
+          <div className="text-[8px] text-slate-400">Atendimento 24h</div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: "pessoal",
+    title: "SITE PESSOAL",
+    description: "Portfólio profissional com apresentação de serviços, projetos e experiência.",
+    buttonText: "VER DEMONSTRAÇÃO",
+    buttonType: "gold",
+    link: "#",
+    mockup: (
+      <div className="w-full h-44 bg-gradient-to-tr from-[#1E293B] via-[#334155] to-[#475569] p-4 flex flex-col justify-between text-white relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+        <div className="flex items-center justify-between text-[10px] text-slate-300">
+          <span className="font-bold">Gabriel Menezes</span>
+          <span className="text-[8px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded">Desenvolvedor</span>
+        </div>
+        <div className="my-auto flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-slate-600 border border-slate-400 flex items-center justify-center font-bold text-xs">
+            GM
+          </div>
+          <div>
+            <div className="text-xs font-bold">Portfólio Profissional</div>
+            <div className="text-[8px] text-slate-300">Fullstack Developer & Designer</div>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-2 flex-1">
-          <div className="bg-zinc-200 dark:bg-zinc-900 rounded" />
-          <div className="bg-zinc-200 dark:bg-zinc-900 rounded" />
-          <div className="bg-zinc-200 dark:bg-zinc-900 rounded" />
-          <div className="bg-zinc-200 dark:bg-zinc-900 rounded" />
-          <div className="bg-zinc-200 dark:bg-zinc-900 rounded" />
-          <div className="bg-zinc-200 dark:bg-zinc-900 rounded" />
+        <div className="flex gap-2 text-[8px] text-slate-300">
+          <span>• 10+ Projetos</span>
+          <span>• Contato Direto</span>
         </div>
       </div>
     ),
@@ -125,76 +109,125 @@ const projects = [
 ];
 
 export default function PortfolioSection() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activeProject, setActiveProject] = useState<string | null>(null);
+
+  const handleOpenDemo = (title: string) => {
+    setActiveProject(title);
+    setModalOpen(true);
+  };
+
   return (
-    <section id="projetos" className="section-padding bg-[#05070B] relative">
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-heading text-white mb-6 uppercase tracking-wider">
-            PROJETOS QUE SAIRAM DO PAPEL.
+    <section id="projetos" className="bg-[#F8FAFC] py-20 lg:py-28 border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="font-heading text-3xl sm:text-4xl font-black text-[#071A3A] tracking-tight">
+            PROJETOS QUE SAÍRAM DO PAPEL
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-[#C9A227] mx-auto rounded-full" />
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="glass-card rounded-2xl overflow-hidden group border border-[#1A2642] hover:border-[#3A4E7A] transition-colors flex flex-col"
+        {/* 4 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {projects.map((proj) => (
+            <div
+              key={proj.id}
+              className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group"
             >
-              <div className="h-64 bg-[#0A1020] relative p-4 border-b border-[#1A2642]">
-                <div className="w-full h-full rounded-lg overflow-hidden border border-[#1A2642] bg-black shadow-lg relative">
-                  {/* Browser frame */}
-                  <div className="h-6 bg-[#1A2642]/50 flex items-center px-2 gap-1.5 border-b border-[#1A2642]">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
-                  </div>
-                  {/* Preview content */}
-                  <div className="h-[calc(100%-1.5rem)] w-full">
-                    {project.preview}
-                  </div>
-                  {project.badge && (
-                    <div className="absolute top-8 right-2 bg-black/80 backdrop-blur-md text-xs font-bold px-2 py-1 rounded text-white border border-white/10 uppercase tracking-wider">
-                      {project.badge}
-                    </div>
-                  )}
+              <div>
+                {/* Mockup Preview */}
+                <div className="relative overflow-hidden">
+                  {proj.mockup}
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="font-heading font-extrabold text-sm text-[#071A3A] tracking-wider uppercase mb-2">
+                    {proj.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    {proj.description}
+                  </p>
                 </div>
               </div>
 
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-heading text-white mb-3">
-                  {project.title}
-                </h3>
-                <p className="text-[#C8CDD5] text-sm mb-6 flex-1">
-                  {project.description}
-                </p>
-                <div>
-                  {project.isReal ? (
-                    <Link href={project.link} target="_blank" rel="noopener noreferrer">
-                      <button className="btn-primary w-full sm:w-auto uppercase text-sm tracking-wider py-2.5">
-                        VER PROJETO
-                      </button>
-                    </Link>
-                  ) : (
-                    <button className="btn-outline w-full sm:w-auto uppercase text-sm tracking-wider py-2.5 cursor-default opacity-80 hover:opacity-100">
-                      VER CONCEITO
-                    </button>
-                  )}
-                </div>
+              {/* Action Button */}
+              <div className="p-6 pt-0">
+                {proj.buttonType === "navy" ? (
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-navy w-full py-2.5 text-center text-xs font-extrabold tracking-wider rounded-md"
+                  >
+                    {proj.buttonText}
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => handleOpenDemo(proj.title)}
+                    className="btn-gold-card w-full py-2.5 text-center text-xs font-extrabold tracking-wider rounded-md"
+                  >
+                    {proj.buttonText}
+                  </button>
+                )}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
+
+        {/* Bottom Central Action */}
+        <div className="text-center">
+          <a
+            href="https://wa.me/5538991621135?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20mais%20projetos%20do%20portf%C3%B3lio%20da%20RB%20Digital."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-light-outline py-3 px-8 text-xs font-extrabold tracking-wider rounded-md inline-flex items-center shadow-sm"
+          >
+            VER TODOS OS PROJETOS
+          </a>
+        </div>
+
       </div>
+
+      {/* Demo Modal */}
+      {modalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
+          <div className="bg-white border border-slate-200 rounded-2xl max-w-lg w-full p-8 text-left shadow-2xl relative">
+            <button
+              onClick={() => setModalOpen(false)}
+              className="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl"
+            >
+              ✕
+            </button>
+            <span className="text-[10px] font-bold text-[#B8860B] uppercase tracking-widest">
+              DEMONSTRAÇÃO CONCEITUAL
+            </span>
+            <h3 className="font-heading font-black text-xl text-[#071A3A] mt-1 mb-4">
+              {activeProject}
+            </h3>
+            <p className="text-sm text-slate-600 leading-relaxed mb-6">
+              Este projeto é um modelo demonstrativo de alta tecnologia desenvolvido pela equipe da <strong>RB Digital</strong>. Nós personalizamos a interface, fluxos, integrações e funcionalidades de acordo com a sua necessidade.
+            </p>
+            <div className="flex gap-3">
+              <a
+                href={`https://wa.me/5538991621135?text=Ol%C3%A1!%20Gostei%20do%20modelo%20${encodeURIComponent(activeProject || '')}%20e%20gostaria%20de%20um%20or%C3%A7amento%20personalizado.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-navy py-2.5 px-6 text-xs font-bold rounded-md flex-1 text-center"
+              >
+                SOLICITAR PROJETO SIMILAR
+              </a>
+              <button
+                onClick={() => setModalOpen(false)}
+                className="btn-light-outline py-2.5 px-4 text-xs font-bold rounded-md"
+              >
+                FECHAR
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
