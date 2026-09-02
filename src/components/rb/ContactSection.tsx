@@ -22,7 +22,7 @@ export default function ContactSection() {
           transition={{ delay: 0.1 }}
           className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto"
         >
-          Entre em contato conosco e descubra como podemos ajudar a sua empresa a crescer no ambiente digital.
+          Entre em contato conosco e veja como podemos ajudar a sua empresa a crescer no ambiente digital.
         </motion.p>
 
         <motion.div 

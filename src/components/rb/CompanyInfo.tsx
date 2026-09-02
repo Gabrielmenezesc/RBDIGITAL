@@ -48,7 +48,7 @@ export default function CompanyInfo() {
                 </div>
                 <div>
                   <span className="text-gray-500 block mb-1">Nome Fantasia</span>
-                  <span className="text-gray-200 font-medium">Descubraobrasil</span>
+                  <span className="text-gray-200 font-medium">RB Digital</span>
                 </div>
                 <div>
                   <span className="text-gray-500 block mb-1">Data de abertura</span>

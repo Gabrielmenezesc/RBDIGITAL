@@ -4,7 +4,7 @@
  *
  * Uso:
  *   import { assetPath } from '@/lib/assetPath';
- *   <img src={assetPath('/logo-descubra.png')} />
+ *   <img src={assetPath('/logo-rb-digital.png')} />
  */
 export function assetPath(path: string): string {
   const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
