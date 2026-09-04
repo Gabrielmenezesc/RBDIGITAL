@@ -60,10 +60,10 @@ const stats = [
 
 export default function HeroSection() {
   return (
-    <section id="inicio" className="relative bg-white pt-10 pb-12 lg:pt-14 lg:pb-16 overflow-hidden">
+    <section id="inicio" className="relative bg-gradient-to-b from-[#F6F7F9] via-[#ECEEF2] to-[#ECEEF2] pt-10 pb-12 lg:pt-14 lg:pb-16 overflow-hidden">
       
-      {/* Subtle background geometric lines */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.035] flex items-center justify-center">
+      {/* Background architectural fine lines */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.04] flex items-center justify-center">
         <svg className="w-full h-full" viewBox="0 0 1200 600" fill="none" stroke="currentColor">
           <path d="M100 500 L600 100 L1100 500 Z" strokeWidth="2" />
           <path d="M300 500 Q 600 200 900 500" strokeWidth="2" />
@@ -127,15 +127,15 @@ export default function HeroSection() {
 
           </div>
 
-          {/* Right Column: 4D 3D Interactive WebGL Canvas Badge */}
+          {/* Right Column: 3D Emblem with Seamless Studio Gray Blend */}
           <div className="lg:col-span-5 flex items-center justify-center">
             <ThreeHeroBadge />
           </div>
 
         </div>
 
-        {/* Floating Stats Bar */}
-        <div className="mt-14 bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-[0_10px_30px_-10px_rgba(7,26,58,0.08)]">
+        {/* Floating Stats Bar (Pure White Card on Gray Floor) */}
+        <div className="mt-14 bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-[0_12px_35px_-10px_rgba(7,26,58,0.07)]">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((stat, idx) => (
               <div key={idx} className="flex items-center gap-4 group">

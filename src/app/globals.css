@@ -6,6 +6,7 @@
   --color-gold: #B8860B;
   --color-gold-light: #C9A227;
   --color-gold-hover: #996F08;
+  --color-studio-gray: #ECEEF2;
   --color-surface-light: #F8FAFC;
   --color-surface-border: #E2E8F0;
   --color-text-dark: #0F172A;
@@ -16,7 +17,7 @@
 }
 
 :root {
-  --background: #FFFFFF;
+  --background: #ECEEF2;
   --foreground: #0F172A;
   --primary: #071A3A;
   --gold: #B8860B;
@@ -35,35 +36,11 @@ html {
 }
 
 body {
-  background: #FFFFFF;
+  background: #ECEEF2;
   color: #0F172A;
   font-family: var(--font-sans);
   overflow-x: hidden;
   line-height: 1.5;
-}
-
-/* ============================================
-   SCROLLBAR
-   ============================================ */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #F8FAFC;
-}
-::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
-}
-
-/* ============================================
-   TYPOGRAPHY
-   ============================================ */
-.font-heading {
-  font-family: var(--font-heading);
 }
 
 /* ============================================
@@ -72,14 +49,14 @@ body {
 .card-clean {
   background: #FFFFFF;
   border: 1px solid #E2E8F0;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px -2px rgba(7, 26, 58, 0.05), 0 2px 6px -1px rgba(7, 26, 58, 0.03);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-clean:hover {
   border-color: #CBD5E1;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 12px 30px -5px rgba(7, 26, 58, 0.10);
   transform: translateY(-2px);
 }
 
