@@ -1,8 +1,55 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
-const services = [
+const featuredSolutions = [
+  {
+    title: "Desenvolvimento Web",
+    desc: "Sites institucionais, lojas virtuais e portais personalizados.",
+    icon: (
+      <svg className="w-6 h-6 text-[#071A3A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" strokeWidth="1.75" />
+        <line x1="2" y1="12" x2="22" y2="12" strokeWidth="1.75" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" strokeWidth="1.75" />
+      </svg>
+    ),
+  },
+  {
+    title: "Marketing Digital",
+    desc: "Gestão de redes sociais, tráfego pago e estratégias que geram resultado.",
+    icon: (
+      <svg className="w-6 h-6 text-[#071A3A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M11 5.882V19.24a1.76 1.76 0 0 1-3.417.592l-2.147-6.15M18 8a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v6a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8z" strokeWidth="1.75" />
+        <path d="M22 10v4" strokeWidth="1.75" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Automação",
+    desc: "Automatize processos, reduza erros e ganhe mais tempo para focar no que importa.",
+    icon: (
+      <svg className="w-6 h-6 text-[#071A3A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3" strokeWidth="1.75" />
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" strokeWidth="1.75" />
+      </svg>
+    ),
+  },
+  {
+    title: "Conteúdo & Design",
+    desc: "Identidade visual, design gráfico e produção de conteúdo que conecta.",
+    icon: (
+      <svg className="w-6 h-6 text-[#071A3A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M12 19l7-7 3 3-7 7-3-3z" strokeWidth="1.75" />
+        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" strokeWidth="1.75" />
+        <path d="M2 2l7.586 7.586" strokeWidth="1.75" />
+        <circle cx="11" cy="11" r="2" strokeWidth="1.75" />
+      </svg>
+    ),
+  },
+];
+
+const allServices = [
   {
     id: 1,
     title: "CRIAÇÃO DE SITES",
@@ -149,56 +196,90 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section id="solucoes" className="bg-[#F8FAFC] py-20 lg:py-28 border-t border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="solucoes" className="bg-[#F8FAFC] py-20 lg:py-24 border-t border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-2">
-          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#0B3D91]">
-            TECNOLOGIA PARA TRANSFORMAR IDEIAS EM REALIDADE
-          </span>
-          <h2 className="font-heading text-3xl sm:text-4xl font-black text-[#071A3A] tracking-tight">
-            O QUE FAZEMOS
-          </h2>
-        </div>
+        {/* Featured Section Matching User's Screenshot */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          {/* Left Title Block */}
+          <div className="lg:col-span-4 space-y-2">
+            <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#B8860B]">
+              NOSSAS SOLUÇÕES
+            </span>
+            <h2 className="font-heading text-2xl sm:text-3xl font-black text-[#071A3A] tracking-tight leading-tight">
+              Soluções completas para o seu <span className="text-[#B8860B]">crescimento.</span>
+            </h2>
+          </div>
 
-        {/* 12 Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
-          {services.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white border border-slate-200 rounded-xl p-6 flex flex-col justify-between hover:border-slate-300 hover:shadow-md transition-all duration-300 group"
-            >
-              <div>
-                {/* Icon box */}
-                <div className="w-12 h-12 rounded-lg bg-blue-50/80 border border-blue-100 flex items-center justify-center mb-5 group-hover:bg-blue-100/70 transition-colors">
+          {/* Right 4 Featured Cards */}
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {featuredSolutions.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center mb-3 group-hover:bg-blue-50/50 transition-colors">
                   {item.icon}
                 </div>
-
-                {/* Title */}
-                <h3 className="font-heading font-extrabold text-xs text-[#071A3A] tracking-wider uppercase mb-2 leading-snug">
-                  {item.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                  {item.description}
-                </p>
+                <div>
+                  <h3 className="font-heading font-extrabold text-xs text-[#071A3A] tracking-wide mb-1">
+                    {item.title}
+                  </h3>
+                  <p className="text-[11px] text-slate-500 leading-relaxed font-normal">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
+            ))}
+          </div>
 
-              {/* Action Link */}
-              <div className="pt-5 mt-4 border-t border-slate-100">
-                <a
-                  href={`https://wa.me/5538991621135?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20de%20${encodeURIComponent(item.title)}.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-[10px] font-extrabold uppercase tracking-wider text-[#B8860B] hover:text-[#996F08] transition-colors"
-                >
-                  CONHECER SOLUÇÃO <span className="ml-1 text-sm font-bold">→</span>
-                </a>
+        </div>
+
+        {/* The 12 Detailed Services Grid */}
+        <div>
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-1">
+            <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#0B3D91]">
+              TECNOLOGIA PARA TRANSFORMAR IDEIAS EM REALIDADE
+            </span>
+            <h3 className="font-heading text-2xl sm:text-3xl font-black text-[#071A3A] tracking-tight">
+              O QUE FAZEMOS
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {allServices.map((item) => (
+              <div
+                key={item.id}
+                className="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between hover:border-slate-300 hover:shadow-md transition-all duration-300 group"
+              >
+                <div>
+                  <div className="w-11 h-11 rounded-lg bg-blue-50/80 border border-blue-100 flex items-center justify-center mb-4 group-hover:bg-blue-100/70 transition-colors">
+                    {item.icon}
+                  </div>
+
+                  <h4 className="font-heading font-extrabold text-xs text-[#071A3A] tracking-wider uppercase mb-2 leading-snug">
+                    {item.title}
+                  </h4>
+
+                  <p className="text-[11px] text-slate-600 leading-relaxed font-normal">
+                    {item.description}
+                  </p>
+                </div>
+
+                <div className="pt-4 mt-3 border-t border-slate-100">
+                  <a
+                    href={`https://wa.me/5538991621135?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20de%20${encodeURIComponent(item.title)}.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-[10px] font-extrabold uppercase tracking-wider text-[#B8860B] hover:text-[#996F08] transition-colors"
+                  >
+                    CONHECER SOLUÇÃO <span className="ml-1 text-xs font-bold">→</span>
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
       </div>
