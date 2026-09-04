@@ -41,7 +41,7 @@ export default function Navbar() {
             <img
               src={assetPath("/logo-rb-digital.png")}
               alt="RB Digital Logo"
-              className="w-full h-full object-contain mix-blend-multiply"
+              className="w-full h-full object-contain"
             />
           </div>
           <div className="flex flex-col">

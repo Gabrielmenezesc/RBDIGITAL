@@ -143,3 +143,30 @@ body {
   background: #F8FAFC;
   transform: translateY(-1px);
 }
+
+/* ============================================
+   4D MOTION KEYFRAMES
+   ============================================ */
+@keyframes rb-float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-9px) rotate(0.6deg) scale(1.01);
+  }
+  50% {
+    transform: translateY(-15px) rotate(0deg) scale(1.02);
+  }
+  75% {
+    transform: translateY(-7px) rotate(-0.6deg) scale(1.01);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.animate-rb-float {
+  animation: rb-float 6s ease-in-out infinite;
+  will-change: transform;
+}
+
