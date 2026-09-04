@@ -16,7 +16,7 @@ export default function Footer() {
           
           {/* Col 1: Brand & Social */}
           <div className="space-y-4">
-            <Link href="#inicio" className="flex items-center gap-2.5">
+            <Link href="/" className="flex items-center gap-2.5">
               <img
                 src={assetPath("/logo-rb-digital.png")}
                 alt="RB Digital Logo"
@@ -111,13 +111,13 @@ export default function Footer() {
               NAVEGAÇÃO
             </h4>
             <ul className="space-y-2.5 text-slate-500 font-medium">
-              <li><Link href="#inicio" className="hover:text-[#071A3A] transition-colors">Início</Link></li>
-              <li><Link href="#solucoes" className="hover:text-[#071A3A] transition-colors">Soluções</Link></li>
-              <li><Link href="#projetos" className="hover:text-[#071A3A] transition-colors">Projetos</Link></li>
-              <li><Link href="#rblab" className="hover:text-[#071A3A] transition-colors">RB Lab</Link></li>
-              <li><Link href="#sobre" className="hover:text-[#071A3A] transition-colors">Sobre</Link></li>
-              <li><Link href="#empresa" className="hover:text-[#071A3A] transition-colors">Empresa</Link></li>
-              <li><Link href="#contato" className="hover:text-[#071A3A] transition-colors">Contato</Link></li>
+              <li><Link href="/" className="hover:text-[#071A3A] transition-colors">Início</Link></li>
+              <li><Link href="/solucoes/" className="hover:text-[#071A3A] transition-colors">Soluções</Link></li>
+              <li><Link href="/projetos/" className="hover:text-[#071A3A] transition-colors">Projetos</Link></li>
+              <li><Link href="/rblab/" className="hover:text-[#071A3A] transition-colors">RB Lab</Link></li>
+              <li><Link href="/sobre/" className="hover:text-[#071A3A] transition-colors">Sobre</Link></li>
+              <li><Link href="/empresa/" className="hover:text-[#071A3A] transition-colors">Empresa</Link></li>
+              <li><Link href="/contato/" className="hover:text-[#071A3A] transition-colors">Contato</Link></li>
             </ul>
           </div>
 
@@ -127,16 +127,16 @@ export default function Footer() {
               SOLUÇÕES
             </h4>
             <ul className="space-y-2 text-slate-500 font-medium">
-              <li><Link href="#solucoes" className="hover:text-[#071A3A] transition-colors">Criação de Sites</Link></li>
-              <li><Link href="#solucoes" className="hover:text-[#071A3A] transition-colors">Marketing Digital</Link></li>
-              <li><Link href="#solucoes" className="hover:text-[#071A3A] transition-colors">Redes Sociais</Link></li>
-              <li><Link href="#solucoes" className="hover:text-[#071A3A] transition-colors">Vídeos</Link></li>
-              <li><Link href="#solucoes" className="hover:text-[#071A3A] transition-colors">Design</Link></li>
-              <li><Link href="#solucoes" className="hover:text-[#071A3A] transition-colors">Chatbots</Link></li>
-              <li><Link href="#solucoes" className="hover:text-[#071A3A] transition-colors">Integrações</Link></li>
-              <li><Link href="#solucoes" className="hover:text-[#071A3A] transition-colors">Planilhas</Link></li>
-              <li><Link href="#solucoes" className="hover:text-[#071A3A] transition-colors">Eventos</Link></li>
-              <li><Link href="#solucoes" className="hover:text-[#071A3A] transition-colors">PowerPoint</Link></li>
+              <li><Link href="/solucoes/" className="hover:text-[#071A3A] transition-colors">Criação de Sites</Link></li>
+              <li><Link href="/solucoes/" className="hover:text-[#071A3A] transition-colors">Marketing Digital</Link></li>
+              <li><Link href="/solucoes/" className="hover:text-[#071A3A] transition-colors">Redes Sociais</Link></li>
+              <li><Link href="/solucoes/" className="hover:text-[#071A3A] transition-colors">Vídeos</Link></li>
+              <li><Link href="/solucoes/" className="hover:text-[#071A3A] transition-colors">Design</Link></li>
+              <li><Link href="/solucoes/" className="hover:text-[#071A3A] transition-colors">Chatbots</Link></li>
+              <li><Link href="/solucoes/" className="hover:text-[#071A3A] transition-colors">Integrações</Link></li>
+              <li><Link href="/solucoes/" className="hover:text-[#071A3A] transition-colors">Planilhas</Link></li>
+              <li><Link href="/solucoes/" className="hover:text-[#071A3A] transition-colors">Eventos</Link></li>
+              <li><Link href="/solucoes/" className="hover:text-[#071A3A] transition-colors">PowerPoint</Link></li>
             </ul>
           </div>
 
@@ -146,11 +146,11 @@ export default function Footer() {
               EMPRESA
             </h4>
             <ul className="space-y-2.5 text-slate-500 font-medium">
-              <li><Link href="#empresa" className="hover:text-[#071A3A] transition-colors">Sobre a Empresa</Link></li>
-              <li><Link href="#empresa" className="hover:text-[#071A3A] transition-colors">Informações</Link></li>
-              <li><Link href="#empresa" className="hover:text-[#071A3A] transition-colors">CNAES</Link></li>
-              <li><Link href="#empresa" className="hover:text-[#071A3A] transition-colors">Sócio-Administrador</Link></li>
-              <li><Link href="#empresa" className="hover:text-[#071A3A] transition-colors">Localização</Link></li>
+              <li><Link href="/sobre/" className="hover:text-[#071A3A] transition-colors">Sobre a Empresa</Link></li>
+              <li><Link href="/empresa/" className="hover:text-[#071A3A] transition-colors">Informações</Link></li>
+              <li><Link href="/empresa/" className="hover:text-[#071A3A] transition-colors">CNAES</Link></li>
+              <li><Link href="/empresa/" className="hover:text-[#071A3A] transition-colors">Sócio-Administrador</Link></li>
+              <li><Link href="/empresa/" className="hover:text-[#071A3A] transition-colors">Localização</Link></li>
             </ul>
           </div>
 

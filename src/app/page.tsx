@@ -16,19 +16,19 @@ export default function Home() {
       {/* 1. Navbar */}
       <Navbar />
 
-      {/* 2. Hero Section */}
+      {/* 2. Hero Section with Interactive 3D WebGL Badge */}
       <HeroSection />
 
-      {/* 3. O Que Fazemos (Services) */}
+      {/* 3. O Que Fazemos (Services Overview) */}
       <ServicesGrid />
 
-      {/* 4. Nosso Processo */}
+      {/* 4. Nosso Processo (01 - 06) */}
       <ProcessFlow />
 
-      {/* 5. Projetos Que Saíram do Papel (Portfolio) */}
+      {/* 5. Projetos Que Saíram do Papel */}
       <PortfolioSection />
 
-      {/* 6. Tri-Block: RB Lab + Para Quem Trabalhamos + Conte Sua Ideia */}
+      {/* 6. Tri-Block: RB Lab 3D + Para Quem Trabalhamos + Formulário */}
       <AudienceSection />
 
       {/* 7. Informações Empresariais & Onde Estamos */}

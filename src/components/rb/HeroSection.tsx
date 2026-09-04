@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { assetPath } from "@/lib/assetPath";
+import ThreeHeroBadge from "@/components/rb/ThreeHeroBadge";
 
 const WhatsAppIcon = () => (
   <svg className="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24">
@@ -50,7 +50,7 @@ export default function HeroSection() {
             {/* CTA Buttons */}
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
-                href="#orcamento"
+                href="/contato/"
                 className="btn-navy py-3.5 px-7 text-xs font-extrabold tracking-wider rounded-md shadow-md"
               >
                 CRIAR MEU PROJETO
@@ -77,15 +77,9 @@ export default function HeroSection() {
 
           </div>
 
-          {/* Right Column: 3D Emblem Image */}
+          {/* Right Column: 3D Interactive WebGL Canvas Badge */}
           <div className="lg:col-span-5 flex items-center justify-center">
-            <div className="relative w-full max-w-md lg:max-w-none flex justify-center">
-              <img
-                src={assetPath("/logo-rb-digital.png")}
-                alt="RB Digital - Símbolo 3D Brasília"
-                className="w-full max-w-[380px] lg:max-w-[440px] object-contain drop-shadow-2xl"
-              />
-            </div>
+            <ThreeHeroBadge />
           </div>
 
         </div>

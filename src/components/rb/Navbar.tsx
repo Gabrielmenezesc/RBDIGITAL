@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { assetPath } from "@/lib/assetPath";
 
 const WhatsAppIcon = () => (
@@ -11,24 +12,31 @@ const WhatsAppIcon = () => (
 );
 
 const navLinks = [
-  { name: "INÍCIO", href: "#inicio" },
-  { name: "SOLUÇÕES", href: "#solucoes" },
-  { name: "PROJETOS", href: "#projetos" },
-  { name: "RB LAB", href: "#rblab" },
-  { name: "SOBRE", href: "#sobre" },
-  { name: "EMPRESA", href: "#empresa" },
-  { name: "CONTATO", href: "#contato" },
+  { name: "INÍCIO", href: "/" },
+  { name: "SOLUÇÕES", href: "/solucoes/" },
+  { name: "PROJETOS", href: "/projetos/" },
+  { name: "RB LAB", href: "/rblab/" },
+  { name: "SOBRE", href: "/sobre/" },
+  { name: "EMPRESA", href: "/empresa/" },
+  { name: "CONTATO", href: "/contato/" },
 ];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isCurrent = (href: string) => {
+    if (href === "/" && (pathname === "/" || pathname === "/RBDIGITAL/")) return true;
+    if (href !== "/" && pathname?.includes(href.replace(/\//g, ""))) return true;
+    return false;
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         {/* Brand Logo & Tagline */}
-        <Link href="#inicio" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group">
           <img
             src={assetPath("/logo-rb-digital.png")}
             alt="RB Digital Logo"
@@ -46,15 +54,22 @@ export default function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-7">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-xs font-bold text-slate-700 hover:text-[#071A3A] tracking-wider transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = isCurrent(link.href);
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`text-xs font-bold tracking-wider transition-all relative py-1 ${
+                  active
+                    ? "text-[#071A3A] border-b-2 border-[#B8860B]"
+                    : "text-slate-600 hover:text-[#071A3A]"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Right CTA Button */}
@@ -89,16 +104,21 @@ export default function Navbar() {
       {/* Mobile Menu dropdown */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-sm font-bold text-slate-700 hover:text-[#071A3A]"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = isCurrent(link.href);
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block py-2 text-sm font-bold ${
+                  active ? "text-[#071A3A] font-black pl-2 border-l-2 border-[#B8860B]" : "text-slate-700 hover:text-[#071A3A]"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
           <div className="pt-2">
             <a
               href="https://wa.me/5538991621135"

@@ -5,24 +5,21 @@ export const dynamic = 'force-static'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gabrielmenezesc.github.io/RBDIGITAL'
 
-  return [
-    {
-      url: `${baseUrl}/`,
-      lastModified: new Date(),
-      changeFrequency: 'always',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/turismo`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/servicos`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
+  const routes = [
+    '',
+    '/solucoes',
+    '/projetos',
+    '/rblab',
+    '/sobre',
+    '/empresa',
+    '/contato',
+    '/privacidade',
   ]
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}/`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: route === '' ? 1.0 : 0.8,
+  }))
 }
