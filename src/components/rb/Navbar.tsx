@@ -37,11 +37,11 @@ export default function Navbar() {
         
         {/* Brand Logo & Tagline */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-1">
+          <div className="relative w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
             <img
               src={assetPath("/logo-rb-digital.png")}
-              alt="RB Digital Logo 3D"
-              className="w-full h-full object-contain drop-shadow-md"
+              alt="RB Digital Logo"
+              className="w-full h-full object-contain mix-blend-multiply"
             />
           </div>
           <div className="flex flex-col">

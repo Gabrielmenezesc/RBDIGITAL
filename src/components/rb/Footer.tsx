@@ -20,7 +20,7 @@ export default function Footer() {
               <img
                 src={assetPath("/logo-rb-digital.png")}
                 alt="RB Digital Logo"
-                className="w-10 h-10 object-contain"
+                className="w-10 h-10 object-contain mix-blend-multiply"
               />
               <div className="flex flex-col">
                 <span className="font-heading font-extrabold text-base text-[#071A3A] tracking-wider leading-none">
